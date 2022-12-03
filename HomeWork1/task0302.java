@@ -20,7 +20,7 @@ public class task0302 {
 
         System.out.println("Введите первое число: ");
         double num2 = scanner.nextDouble();
-
+        scanner.close();
         if (!(operation == '+' || operation == '-' || operation == '*' || operation == '/')) {
             System.err.println("Такого действия нет!");
         }
