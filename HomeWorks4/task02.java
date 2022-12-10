@@ -4,6 +4,7 @@
 
 package HomeWorks4;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -14,11 +15,12 @@ public class task02 {
         for (int i = 0; i < 10; i++) l.add(rand.nextInt(20));
         int number = 7;
         System.out.println("Первоначальный список: \t\t\t" + l);
-        l = enqueue(l, number); // добавление элемента в конец очереди
+        l = enqueue(l, number);             // добавление элемента в конец очереди
         System.out.println("Cписок после добавления элемента: \t" + l);
-        l = dequeue(l);         // удаление первого элемента
-        System.out.println("Cписок после удаления первого элемента: " + l);
-        int n = first(l);       // получение первого элемента
+        Object[] ld = dequeue(l);           // возвращение и удаление первого элемента
+        System.out.println("Cписок после удаления первого элемента: " + ld[0]);
+        System.out.println("Удаленный элемент: \t\t\t" + ld[1]);
+        int n = first(l);                   // получение первого элемента
         System.out.println("Первый элемент списка: \t\t\t" + n);
     }
 
@@ -28,10 +30,11 @@ public class task02 {
         return l;
     }
 
-    // Удаляет первый элемент
-    public static LinkedList<Integer> dequeue(LinkedList<Integer> l) {
+    // Возвращает и удаляет первый элемент
+    public static Object[] dequeue(LinkedList<Integer> l) {
+        int num = l.getFirst();
         l.removeFirst();
-        return l;
+        return new Object[] { l, num };
     }
 
     // Возвращает первый элемент
