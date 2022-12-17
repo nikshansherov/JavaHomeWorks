@@ -4,7 +4,6 @@
 
 package HomeWorks4;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
 
